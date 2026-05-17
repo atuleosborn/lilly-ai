@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-lilly: #FF007A;
+  --color-lilly-glow: #FF007A;
+  --color-bg-dark: #0A0A0B;
+  --color-bg-sidebar: #0F0F13;
+  --color-bg-panel: #1A1A22;
+  --color-border-dark: #2D2D35;
+  --color-text-dim: #888894;
+  --color-success-neon: #00FF9C;
+  --color-info-neon: #00F0FF;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-[#E0E0E0] selection:bg-lilly/30;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .liquid-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .liquid-glass-accent {
+    background: linear-gradient(135deg, rgba(255, 0, 122, 0.1), rgba(255, 0, 122, 0.03));
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 0, 122, 0.2);
+  }
+
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-3xl transition-all duration-300;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px rgba(255, 0, 122, 0.5);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
